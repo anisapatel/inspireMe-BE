@@ -1,31 +1,44 @@
 // Update with your config settings.
-const { DB_URL } = process.env;
-const ENV = process.env.NODE_ENV || "development";
 
-const baseConfig = {
-  client: "pg",
-  migrations: {
-    directory: "./db/migrations"
-  },
-  seeds: {
-    directory: "./db/seed"
-  }
-};
+module.exports = {
 
-const customConfig = {
   development: {
+    client: 'sqlite3',
     connection: {
-      database: "inspire_quotes"
+      filename: './dev.sqlite3'
     }
   },
-  test: {
-    connection: {
-      database: "inspire_quotes_test"
-    }
-  },
-  production: {
-    connection: `${DB_URL}?ssl=true`
-  }
-};
 
-module.exports = { ...customConfig[ENV], ...baseConfig };
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
+
+};
