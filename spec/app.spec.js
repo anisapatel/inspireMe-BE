@@ -11,7 +11,7 @@ describe("/api", () => {
   beforeEach(() => knex.seed.run());
   after(() => knex.destroy());
   describe("GET", () => {
-    describe("/api/name", () => {
+    describe("/api/quotes/name", () => {
       it("status code: 200, returns quote by name", () => {
         return request(app)
           .get("/api/quotes/Beyonce")
@@ -22,6 +22,16 @@ describe("/api", () => {
               quote:
                 "The reality is: sometimes you lose. And you’re never too good to lose. You’re never too big to lose. You’re never too smart to lose. It happens."
             });
+          });
+      });
+    });
+    describe("/api/quotes", () => {
+      it("status code: 200, returns quotes", () => {
+        return request(app)
+          .get("/api/quotes")
+          .expect(200)
+          .then(({ body }) => {
+            expect(body.quotes[0]).to.contain.keys("name", "quote");
           });
       });
     });

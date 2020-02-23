@@ -1,4 +1,4 @@
-const { fetchQuoteByName } = require("../models/quotesModel");
+const { fetchQuoteByName, fetchAllQuotes } = require("../models/quotesModel");
 
 exports.getQuoteByName = (req, res, next) => {
   const { name } = req.params;
@@ -6,6 +6,14 @@ exports.getQuoteByName = (req, res, next) => {
   fetchQuoteByName(name)
     .then(quote => {
       res.status(200).send({ quote });
+    })
+    .catch(next);
+};
+
+exports.getAllQuotes = (req, res, next) => {
+  fetchAllQuotes()
+    .then(quotes => {
+      res.status(200).send({ quotes });
     })
     .catch(next);
 };

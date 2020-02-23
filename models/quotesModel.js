@@ -9,3 +9,12 @@ exports.fetchQuoteByName = name => {
       return quote;
     });
 };
+
+exports.fetchAllQuotes = () => {
+  return knex
+    .from("quotes")
+    .select("*")
+    .then(quotes => {
+      return quotes;
+    });
+};
