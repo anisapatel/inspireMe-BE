@@ -1,0 +1,10 @@
+module.exports = [ {name: "Johann Wolfgang Von Goethe", quote: "Knowing is not enough; we must apply. Wishing is not enough; we must do"},
+{name:"Henry Ford", quote: "Failure is simply the opportunity to begin again, this time more intelligently"}, 
+{name: "C.S.Lewis", quote: "You are never too old to set another goal or to dream a new dream."},
+{name: "Michael Phelps", quote: "I think goals should never be easy, the should force you to work, even if they are uncomfortable at the time"},
+{name: "Coco Chanel", quote: "Success is often achieved by those who don't know failure is inevitable"},
+{name: "Tony Robbins", quote: "If you do what you have always done, you'll get what you have always gotten" },
+{name: "Richard Branson", quote: "Screw it, let’s do it!"},
+{name: "Beyonce", quote: "The reality is: sometimes you lose. And you’re never too good to lose. You’re never too big to lose. You’re never too smart to lose. It happens."},
+{name: "JK Rowling", quote: "It is our choices that show what we truly are, far more than our abilities."},
+{name: "Yoda", quote: "Do, or do not. There is no 'try'"}]
