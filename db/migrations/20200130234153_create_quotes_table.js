@@ -1,5 +1,4 @@
 exports.up = function(knex) {
-  console.log("creating quotes table...");
   return knex.schema.createTable("quotes", quotesTable => {
     quotesTable
       .string("name")
@@ -10,6 +9,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  console.log("dropping quotes table...");
   return knex.schema.dropTable("quotes");
 };
