@@ -11,6 +11,7 @@ exports.fetchQuoteByName = name => {
 };
 
 exports.fetchAllQuotes = () => {
+  console.log("fehbdfe");
   return knex
     .from("quotes")
     .select("*")
